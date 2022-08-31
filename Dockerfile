@@ -27,7 +27,7 @@ RUN wget https://github.com/strongcourage/fuzzing-corpus/blob/master/png/ImageMa
 RUN wget https://github.com/strongcourage/fuzzing-corpus/blob/master/png/ImageMagick/wizard.png
 RUN cp *.png /tigrCorpus
 WORKDIR /tigr/examples/demo
-COPY file:0dc98c60002cf43ae4202866eb634b6ee4c9a2b9f969389a39c9ecc6b9b9f9cc in . 
+COPY file:0dc98c60002cf43ae4202866eb634b6ee4c9a2b9f969389a39c9ecc6b9b9f9cc  . 
 RUN afl-g++ fuzz.cpp ../../tigr.c -Os -o demo -I../.. -s -lGLU -lGL -lX11
 
 
